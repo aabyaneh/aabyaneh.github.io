@@ -9,10 +9,13 @@
     text-align:center;
     -webkit-box-shadow:0 0 50px #888888;
     padding:20px;
+    margin:0px 15px 0px 0px;
+    width: auto;
+    float:center;
   }
   #content {
     width: auto;
-    float:left;
+    float:center;
     padding:20px 70px 20px 80px;
   }
   #footer {
@@ -22,38 +25,46 @@
     clear:both;
     text-align:center;
     padding:5px;
+    margin:0px 15px 0px 0px;
+    width: auto;
+    float:center;
   }
   #line{
     clear:both;
     border-bottom:4px #fff solid;
     margin:20px 20px 0px -10px;
+    width: auto;
   }
   body{
     background-color:#eee;
+    width: 100%;
   }
   h2{
-    font-family: cursive, Comic Sans MS, sans-serif;
     margin:10 0 20px 0;
+    width: auto;
   }
   h3{
     margin:20px 0 0 20px;
+    width: auto;
   }
   h4{
-    font-family: Calibri, Arial, Helvetica, sans-serif;
     margin:0 0 0 25px;
     font-weight: normal;
     font-size: 1.1em;
+    width: auto;
   }
   h5{
     margin:30px 0 5px 0;
+    width: auto;
   }
   ul{
     line-height:22px;
     margin:20px 20px 20px -10px;
+    width: auto;
   }
   p{
-    font-family: Calibri, Arial, Helvetica, sans-serif;
     margin:5px 0px 20px 30px;
+    width: auto;
   }
   </style>
 </head>
@@ -102,34 +113,32 @@
 
     <div id="line"> </div>
 
+    <h2>Projects</h2>
+    <h4><b>Self-Verification (ongoing project)</b></h4>
+    <p style="text-align:justify">
+      Based on Self-Referential Selfie project. <a href="http://selfie.cs.uni-salzburg.at/" style="text-decoration: none">link</a>
+    </p>
+
+    <h4><b>Parallel Tree Edit Distance</b></h4>
+    <p style="text-align:justify">
+      Parallelizing an existing algorithm for computing the so-called tree edit distance. The tree edit distance is a measure that determines similarity of tree-structured data and is defined as the minimum number of edit operations (deletion, insertion, rename) that transforms one tree into the other. In this project, we took advantage of multi-core systems by considering dependency of computation threads, overhead of multithreading, and concurrent access to data-structures to decrease the execution-time.
+    </p>
+
+    <div id="line"> </div>
+
     <h2>Publications</h2>
-    <h4>[1] A. S. Abyaneh and M. Kargahi, "Energy-efficient scheduling for stability-guaranteed embedded control systems," <i>CSI Symposium on Real-Time and Embedded Systems and Technologies (RTEST)</i>, Tehran, October 2015.</h4>
+    <h4>[1] A. S. Abyaneh and C. M. Kirsch, "You can program what you want but you cannot compute what you want," <i>To appear in Principle of Modeling: Essays Dedicated to Edward A. Lee on the Occasion of His 60th Birthday</i>, Berkeley, October 2017.</h4>
+    <p style="text-align:justify"></p>
+    <h4>[2] A. S. Abyaneh and M. Kargahi, "Energy-efficient scheduling for stability-guaranteed embedded control systems," <i>CSI Symposium on Real-Time and Embedded Systems and Technologies (RTEST)</i>, Tehran, October 2015.</h4>
     <p style="text-align:justify">
       <b>Abstract</b>: Stability, which is heavily dependent on the controller delays, is the main measure of performance in embedded control systems. With the increased demand for resources in such systems, energy consumption has been converted to an important issue, especially in systems with limited energy sources like batteries. Accordingly, in addition to the traditional temporal requirements in these systems, stability and economic energy usage are further demands for the design of embedded control systems. For the latter demand, dynamic voltage and frequency scaling (DVFS) is too usual, however, as this technique increases the controller delay and jitter, it may negatively impact the system stability. This paper addresses the problem of control task priority assignment as well as task-specific processor voltage/frequency assignment such that the stability be guaranteed and the energy consumption be reduced. The proposed idea considers the task execution-time variability and increases the processor frequency only when the task execution-time exceeds some threshold. Experimental results show energy-efficiency of the proposed method for embedded control systems.
     </p>
-    <h4 class="ref">[2] A. S. Abyaneh, "System-level quality of control management in stochastic real-time systems," <i>Master's thesis</i>, University of Tehran, September 2015.</h4>
+    <h4 class="ref">[3] A. S. Abyaneh, "System-level quality of control management in stochastic real-time systems," <i>Master's thesis</i>, University of Tehran, September 2015.</h4>
     <p style="text-align:justify">
       <b>Abstract</b>: Most today's digital control systems implement control algorithms as real-time processing tasks. These tasks usually are to deal with resource limitations due to the restrictions of embedded systems. Although, meeting deadlines is an important requirement in such systems, however, the main objective is to preserve stability and quality of control (QoC) for all the system tasks. This makes most real-time scheduling algorithms inappropriate for embedded control systems. Two main parameters that affect stability and QoC are the response-time and response-time jitter of the control tasks. These parameters encounter variability due to the competition of tasks on limited and shared system resources as well as the considered scheduling policy. Thus, we need appropriate scheduling policies in this thesis, to make a tradeoff between QoC and resource consumption, especially the system energy consumption.
       <br>
       Especially in systems with limited energy resources like batteries, the problem of energy management becomes a more critical issue. Using conventional methods like dynamic voltage and frequency scaling (DVFS), although may reduce the system energy consumption, increases the response-time of control tasks, which negatively impacts the system stability and QoC. We try appropriate priority and processing frequency assignments to control tasks, so that the energy consumption of the system is decreased while task stability and the required QoC level is guaranteed for all tasks. Experimental results show energy-efficiency of the proposed scheduling method for embedded control systems.
     </p>
-
-    <div id="line"> </div>
-
-    <h2>Conferences, Workshops, and Summer Schools</h2>
-    <h4>SC<sup>2</sup> Summer School, Max-Planck-Institut für Informatik, Saarbrücken, August 2017</h4>
-    <h4>RiSE and LogiCS Summer School on Logic, Artificial Intelligence and Verification (LAIVe), Vienna, July 2017</h4>
-    <h4>Rigorous Systems Engineering workshop (RiSE), Austria, September 2016</h4>
-    <h4>Cyber-Physical Systems Week (CPS Week), Vienna, April 2016</h4>
-    <h4>Tutorial-Workshop on Tools for Real-Time Systems (TuToR), Vienna, April 2016</h4>
-    <h4>CSI Symposium on Real-Time and Embedded Systems and Technologies (RTEST), Tehran, October 2015</h4>
-
-    <div id="line"> </div>
-
-    <h2>Teaching Assistant</h2>
-    <h4>Compiler construction, University of Salzburg <a href="http://cs.uni-salzburg.at/~ck/content/classes/CS4All/index.html" style="text-decoration: none">(CS4All)</a> </h4>
-    <h4>Theory of formal languages and automata, University of Tehran</h4>
-    <h4>Performance evaluation of computer systems, University of Tehran</h4>
 
     <div id="line"> </div>
 
