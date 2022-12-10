@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alireza S. Abyaneh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar bg-dark border border-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light mx-3" style="font-size: 1.5rem;">Alireza S. Abyaneh</a>
+      <a class="nav-link mx-3" href="https://github.com/aabyaneh">
+        <i class="d-flex bi-github text-light" style="font-size: 1.5rem;" role="img" aria-label="GitHub"></i>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-8">
+        <div class="h3 pb-2 mb-4 text-dark border-bottom border-dark">
+          About
+        </div>
+        <p class="text-justify" style="text-align: justify;">
+          My name is Alireza Salamiabyaneh and I was a member of Computational Systems Group
+          in the Department of Computer Sciences at the University of Salzburg.
+          I received my Dr.techn. degree from University of Salzburg in November 2022. My main advisor was
+          <a class="text-dark" href="http://cs.uni-salzburg.at/~ck/" style="text-decoration: none">Dr. Christoph Kirsch</a> and my co-advisor was
+          <a class="text-dark" href="http://cs.uni-salzburg.at/~anas/" style="text-decoration: none">Dr. Ana Sokolova</a>.
+          My research interests are in program analysis, symbolic execution, and constraint solving.
+        </p>
+      </div>
+      <div class="col-4">
+        <img src="Images/ph.jpg" class="rounded-circle mx-auto d-block" alt="Image" width="250" height="210">
+      </div>
+    </div>
+    
+    <div class="row mb-3">
+      <div class="col">
+        <div class="h3 pb-2 mb-4 text-dark border-bottom border-dark">
+          Publications
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action">
+            <a class="h5 text-decoration-none text-dark mb-1" style="cursor: pointer;">
+              Abstract Symbolic Execution
+            </a>
+            <buttom class="btn btn-outline-primary btn-sm px-1 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArea1" aria-expanded="false" aria-controls="collapseArea1">
+              Abstract
+            </buttom>
+            <div class="h6 fst-italic mb-3" style="color: #696969;">
+              PhD thesis, Department of Computer Sciences, University of Salzburg, 2022
+            </div>
+            <div class="collapse" id="collapseArea1">
+              <p style="text-align: justify;">
+                Symbolic execution is a program analysis technique which computes program in- puts that cause the program to enter an erroneous state such as division by zero. While executing the program a symbolic execution engine accomplishes this by constructing a Satisfiability Modulo Theory (SMT) formula for a program path to a control-flow location, referred to as path condition. The program location is reachable on that path if and only if the SMT formula is satisfiable in the theory of program expressions. An unsatisfiable formula, on the other hand, shows that the program location is unreachable for all inputs leading to that path. On a regular basis the symbolic execution engine queries an SMT solver to check the reachability of the program’s execution branches. The SMT solving, however, is often a scalability bottleneck in symbolic execution.
+                <br/>
+                In this dissertation we propose abstract symbolic execution (ASE), which is inspired by abstract interpretation, with the goal of querying the SMT solver less frequently and with easier-to-solve SMT formulae by attempting to compute reachability faster through increasingly weaker abstractions. The goal of abstract symbolic execution is to integrate abstract domains in symbolic execution and propose decision procedures which are able to detect when a precise reachability decision can be made with respect to those abstractions.
+                <br/>
+                For this purpose, we proposed a value set decision procedure based on strided value interval (SVI) sets for efficiently determining precise, under-approximating, or over-approximating value sets for variables. We designed a symbolic execution algorithm benefiting from a tiered architecture in its constraint solving component which has the SVI decision procedure as its first layer and the theory of bit-vectors as its second layer. Any reachability decision which can precisely be made by the SVI decision procedure is not queried to the SMT solver. In case when the SVI decision procedure cannot provide a precise decision the abstraction is upgraded to bit-vectors and the decision procedure in the SMT solver is used to answer the reachability query.
+                <br/>
+                When the abstraction is at the bit-vector layer, we proposed a branch prediction method as an optimization technique that predicts reachability of code to delay querying the SMT solver further. The prediction for branches are made according to the cached reachability result of their previous run in the same execution.
+                <br/>
+                We have implemented a prototype of our symbolic execution engine inside the Selfie System performing analysis on programs written in the C* programming language. The experimental evaluations of the proposed symbolic execution algorithms on a set of benchmark programs often showed an improvement in symbolic execution time.
+              </p>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <a class="h5 text-decoration-none text-dark mb-1" style="cursor: pointer;" href="https://ieeexplore.ieee.org/document/9678584">
+              ASE: A Value Set Decision Procedure for Symbolic Execution
+            </a>
+            <buttom class="btn btn-outline-primary btn-sm px-1 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArea2" aria-expanded="false" aria-controls="collapseArea2">
+              Abstract
+            </buttom>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              36th IEEE/ACM International Conference on Automated Software Engineering (ASE), 2021
+            </div>
+            <div class="h6 fst-italic mb-3" style="color: #696969;">
+              Together with Christoph M. Kirsch
+            </div>
+            <div class="collapse" id="collapseArea2">
+              <p style="text-align: justify;">
+                A symbolic execution engine regularly queries a Satisfiability Modulo Theory (SMT) solver to determine reachability of code during execution. Unfortunately, the SMT solver is often the bottleneck of symbolic execution. Inspired by abstract interpretation, we propose an abstract symbolic execution (ASE) engine which aims at querying the SMT solver less often by trying to compute reachability faster through an increasingly weaker abstraction. For this purpose, we have designed and implemented a value set decision procedure based on strided value interval (SVI) sets for efficiently determining precise, or under-approximating value sets for variables. Our ASE engine begins reasoning with respect to the SVI abstraction, and then only if needed uses the theory of bit-vectors implemented in SMT solvers. Our ASE engine efficiently detects when the former abstraction becomes incomplete to move on and try the next abstraction.
+                <br/>
+                We have designed and implemented a prototype of our engine for a subset of 64-bit RISC-V. Our experimental evaluation shows that our prototype often improves symbolic execution time by significantly reducing the number of SMT queries while, whenever the abstraction does not work, the overhead for trying still remains low.
+              </p>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <a class="h5 text-decoration-none text-dark mb-1" style="cursor: pointer;">
+              Selfie: Towards Minimal Symbolic Execution using Modular Stride Integer Interval Domain
+            </a>
+            <buttom class="btn btn-outline-primary btn-sm px-1 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArea3" aria-expanded="false" aria-controls="collapseArea3">
+              Abstract
+            </buttom>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              Poster at the 15th International Conference on Managed Languages & Runtimes, 2018
+            </div>
+            <div class="h6 fst-italic mb-3" style="color: #696969;">
+              Together with Christoph M. Kirsch, and Clement Poncelet Sanchez
+            </div>
+            <div class="collapse" id="collapseArea3">
+              <p style="text-align: justify;">
+              Selfie: Towards Minimal Symbolic Execution using Modular Stride Integer Interval Domain.
+              </p>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <a class="h5 text-decoration-none text-dark mb-1" style="cursor: pointer;" href="https://2018.programming-conference.org/details/MoreVMs-2018/2/Selfie-Towards-Minimal-Symbolic-Execution">
+              Selfie: Towards Minimal Symbolic Execution
+            </a>
+            <buttom class="btn btn-outline-primary btn-sm px-1 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArea4" aria-expanded="false" aria-controls="collapseArea4">
+              Abstract
+            </buttom>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              MoreVMs, 2018
+            </div>
+            <div class="h6 fst-italic mb-3" style="color: #696969;">
+              Together with Simon Bauer, Christoph Kirsch, Philipp Mayer, Christian Mösl, Clement Poncelet, Sara Seidl, Ana Sokolova, and Manuel Widmoser
+            </div>
+            <div class="collapse" id="collapseArea4">
+              <p style="text-align: justify;">
+                Selfie is a self-contained 64-bit implementation of (1) a self-compiling compiler written in a tiny subset of C called C* targeting a tiny subset of 64-bit RISC-V called RISC-U, (2) a self-executing RISC-U emulator, and (3) a self-hosting hypervisor that virtualizes the emulated RISC-U machine. Selfie is implemented in a single 8k-line file and can compile, execute, and virtualize itself any number of times in a single invocation of the system given adequate resources. There is also a simple linker, disassembler, debugger, and profiler. Selfie has originally been developed just for educational purposes but has recently become a research platform as well. C* supports only two data types, uint64_t and uint64_t*, and RISC-U features just 14 instructions, in particular for unsigned arithmetic only, which significantly simplifies reasoning about correctness. In this paper, we report on an ongoing effort in designing and implementing a symbolic execution engine for RISC-U within selfie that is supposed to explore non-trivial parts of the system including itself. The idea is to identify the set of ingredients that are necessary to do this such as the data structures for representing traces, path conditions, and symbolic states as well as algorithms for SAT and SMT solving. The key difference to other more advanced projects is that we are interested in reasoning just about selfie, for now, and are able to change selfie if necessary, as reasoning target but also as integrated platform for compilation, (symbolic) execution, and virtualization. Since selfie generates unoptimized code we are also exploring ways to leverage our symbolic execution engine in code optimization.
+              </p>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <a class="h5 text-decoration-none text-dark mb-1" style="cursor: pointer;" href="https://link.springer.com/chapter/10.1007/978-3-319-95246-8_1">
+              You Can Program What You Want but You Cannot Compute What You Want
+            </a>
+            <buttom class="btn btn-outline-primary btn-sm px-1 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArea5" aria-expanded="false" aria-controls="collapseArea5">
+              Abstract
+            </buttom>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              Principles of Modeling: Essays Dedicated to Edward A. Lee on the Occasion of His 60th Birthday, Springer, 2018
+            </div>
+            <div class="h6 fst-italic mb-3" style="color: #696969;">
+              Together with Christoph M. Kirsch
+            </div>
+            <div class="collapse" id="collapseArea5">
+              <p style="text-align: justify;">
+                Computers are the most fascinating machines ever invented. Virtually everyone uses them in one form or another every day. However, most people only have a vague understanding of how computers work, let alone how to program them. Yet computing has become a commodity almost like energy, food, or water. The question is if the general public, for modern society to work properly, needs to understand computing better than what people generally know about, say, producing electricity or clean water. We argue that the intractability and even undecidability of so many important problems in computer science are the reason that computing is indeed different. It is the limits of computability, not just the capabilities of computers, that is the source of unbounded potential in the automation of everything. The challenge is to teach people not just programming but also how programming is the neverending process of overcoming those limits. We have developed a system called selfie that implements a self-referential compiler, emulator, and hypervisor that can compile, execute, and virtualize itself. We use selfie to teach undergraduate and graduate students computer science from first principles. In particular, we show them how self-referentiality in selfie is capability and limitation of computing at the same time. Here, we discuss ongoing early work on integrating verification technology into selfie as yet another way of exploring what computing is.
+              </p>
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <a class="h5 text-decoration-none text-dark mb-1" style="cursor: pointer;" href="https://ieeexplore.ieee.org/document/7369848">
+              Energy-Efficient Scheduling for Stability-Guaranteed Embedded Control Systems
+            </a>
+            <buttom class="btn btn-outline-primary btn-sm px-1 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArea6" aria-expanded="false" aria-controls="collapseArea6">
+              Abstract
+            </buttom>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              CSI Symposium on Real-Time and Embedded Systems and Technologies (RTEST), IEEE, 2015
+            </div>
+            <div class="h6 fst-italic mb-3" style="color: #696969;">
+              Together with Mehdi Kargahi
+            </div>
+            <div class="collapse" id="collapseArea6">
+              <p style="text-align: justify;">
+                Stability, which is heavily dependent on the controller delays, is the main measure of performance in embedded control systems. With the increased demand for resources in such systems, energy consumption has been converted to an important issue, especially in systems with limited energy sources like batteries. Accordingly, in addition to the traditional temporal requirements in these systems, stability and economic energy usage are further demands for the design of embedded control systems. For the latter demand, dynamic voltage and frequency scaling (DVFS) is too usual, however, as this technique increases the controller delay and jitter, it may negatively impact the system stability. This paper addresses the problem of control task priority assignment as well as task-specific processor voltage/frequency assignment such that the stability be guaranteed and the energy consumption be reduced. The proposed idea considers the task execution-time variability and increases the processor frequency only when the task execution-time exceeds some threshold. Experimental results show energy-efficiency of the proposed method for embedded control systems.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="row mb-2">
+      <div class="col">
+        <div class="h3 pb-2 mb-4 text-dark border-bottom border-dark">
+          Selected Talks
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action">
+            <div class="h5 text-dark mb-1">
+              Abstract Symbolic Execution
+            </div>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              PhD Defense, Salzburg, Austria, November 2022
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <div class="h5 text-dark mb-1">
+              ASE: A Value Set Decision Procedure for Symbolic Execution
+            </div>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              36th IEEE/ACM International Conference on Automated Software Engineering (ASE), November 2021
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <div class="h5 text-dark mb-1">
+              Complete Symbolic Analysis in Selfie
+            </div>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              Alpine Verification Meeting (AVM), Wagrain, Austria, September 2018
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <div class="h5 text-dark mb-1">
+              Self-Referential Theorem Proving in Selfie
+            </div>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              Alpine Verification Meeting (AVM), Visegrád, Hungary, September 2017
+            </div>
+          </li>
+          <li class="list-group-item list-group-item-action">
+            <div class="h5 text-dark mb-1">
+              Energy-efficient scheduling for stability-guaranteed embedded control systems
+            </div>
+            <div class="h6 fst-italic mb-1" style="color: #696969;">
+              CSI Symposium on Real-Time and Embedded Systems and Technologies (RTEST), October 2015
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <nav class="navbar border border-secondary border-opacity-25 mt-4" style="background-color: #EAEAEA;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-secondary" href="#">
+        Contact Info: firstname.lastname (AT) cs.uni-salzburg.at
+      </a>
+    </div>
+  </nav>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+
+</html>
